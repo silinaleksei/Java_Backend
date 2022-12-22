@@ -1,5 +1,6 @@
 package lesson3;
 
+import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;
 
 import java.io.FileInputStream;
@@ -16,6 +17,7 @@ public abstract class AbstractTest {
 
     @BeforeAll
     static void initTest() throws IOException {
+        RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
         configFile = new FileInputStream("src/main/resources/my.properties");
         prop.load(configFile);
         apiKey = prop.getProperty("apiKey");
