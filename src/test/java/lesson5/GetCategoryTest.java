@@ -18,7 +18,6 @@ public class GetCategoryTest {
 
     @BeforeAll
     static void beforeAll() {
-
         categoryService = RetrofitUtils.getRetrofit().create(CategoryService.class);
     }
 
